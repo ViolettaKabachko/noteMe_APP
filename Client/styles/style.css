@@ -1,0 +1,108 @@
+.input {
+    margin: 10px;
+}
+
+body {
+    margin: 0;
+}
+
+.top {
+    padding: 15px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    font-size: 21px;
+    margin: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(219, 75, 75);
+}
+
+.mainpage, .feed, .register {
+    text-decoration: none;
+    color: black;
+    font-size: 21px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color ease-in-out 0.2s; 
+}
+
+
+.register:hover, .mainpage:hover, .feed:hover{
+    color: rgb(228, 236, 233);
+}
+
+.mainpage:hover{
+    color: rgb(228, 236, 233);
+}
+
+.age, .password, .email, .name, .second-name, .nick {
+    padding: 3px 0px 5px 10px;
+    font-size: 21px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-width: 2px;
+    transition: border-radius 0.15s;
+}
+
+.age:hover, .password:hover, .email:hover, .name:hover, .second-name:hover, .nick:hover{
+    border-radius: 15px;
+}
+
+.btn {
+    padding: 3px 10px 5px 10px;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(116, 181, 237);
+    transition: background-color 0.2s, border-radius 0.2s;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color:rgb(70, 132, 186);
+    border-radius: 15px;
+}
+
+.btn:active {
+    background-color:rgb(61, 113, 158);
+}
+
+.home {
+    margin-left: 10px;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: rgb(66, 63, 60);
+    transition: 0.3s;    
+}
+
+.home:hover {
+    font-size: 18.5px;
+}
+
+.home:active {
+    font-size: 16.5px;
+}
+
+.text {
+    margin-left: 10px;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-post {
+    margin: 10px 0 0 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 27px;
+}
+
+.list-post-date {
+    margin: 10px 0 0 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+}
+
+.posts {
+    word-wrap:break-word;
+    padding: 10px;
+}

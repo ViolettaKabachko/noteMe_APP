@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Log in</title>
+        <script type="module" src="/scripst/login.js"></script>
+        <link href="styles/style.css" rel="stylesheet">
+    </head>
+
+    <body class="body">
+        <nav class="top">
+            <div>
+                <a href="/" class="mainpage">NoteMe!</a>
+            </div>
+
+            <div>
+                <a href="users_posts.html" class="feed">Posts</a>
+            </div>
+
+            <div>
+                <a href="reg.html" class="register">Register here</a>
+            </div>
+        </nav>
+
+        <div class="log-in">
+            <form onsubmit="return false">
+                <div class="input">
+                    <input class="email" placeholder="E-mail">
+                </div>
+
+                <div class="input">
+                    <input class="password" placeholder="Password" type="password">
+                </div>    
+                                
+                <div class="input">
+                    <button class="btn" type="submit">
+                        Log in
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <p class="error"></p>
+        </div>
+        
+        
+    </body>
+</html>
