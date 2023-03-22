@@ -86,4 +86,13 @@ class DataBase:
             )
             self.connection.commit()
             print('Post uploaded')
+
+    def delete_post(self, post_id):
+        cursor = self.connection.cursor()
+        with cursor as cur:
+            cur.execute(
+                '''delete from posts where post_id = %s''', (post_id,)
+            )
+        self.connection.commit()
+        print(f'Post with id = {post_id} deleted succesfully')
 #  Функция для поиска юзера и принта всей инфы.

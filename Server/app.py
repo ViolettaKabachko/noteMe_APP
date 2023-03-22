@@ -3,6 +3,7 @@ from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from postgres_db import DataBase
 from json import loads
+from datetime import datetime
 from db import adr
 
 
@@ -31,7 +32,7 @@ def close_connection(response):
 @app.route('/reg', methods=['GET', 'POST'])
 def register():
     data = loads(request.data)
-    print('Data is', data)
+    print('Data: ', data)
     first_name = data['first_name']
     second_name = data['second_name']
     nick = data['nick']
@@ -39,7 +40,7 @@ def register():
     email = data['e-mail']
     password = generate_password_hash(data['password'])
     connected_db.insert_data(first_name, second_name, nick, age, email, password)
-    return jsonify({'answer': True})
+    return jsonify({'Answer': 'Registered'})
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -77,9 +78,14 @@ def show_posts():
     data = loads(request.data)
     print(data)
     posts = connected_db.get_user_posts(int(data['user_id']))
-    res = [[post[1], post[-1]] for post in posts]
+    res = [[post[1], datetime.strftime(post[-1], '%d.%m.%Y %H:%M'), post[0]] for post in posts]
     return jsonify(res)
 
+
+@app.route('/delete_post/<post_id>', methods=['GET'])
+def delete_post(post_id):
+    connected_db.delete_post(post_id)
+    return jsonify(f'Post {post_id} deleted')
 # @app.route('/ava', methods=['POST'])
 # def dowload():
 #     """Upload a avatar to BD by id"""

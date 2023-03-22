@@ -1,15 +1,16 @@
-import { sendData } from "./fetch.js";
+import { sendData, checkCookie} from "./fetch.js";
 
 const logout = () => {
     document.cookie = 'user-on-site=null; max-age=0';
     document.location.href = '/'
+    localStorage.clear();
 }
 
-if (!document.cookie || document.cookie.split('=')[1] != localStorage.getItem('info_to_insert').split(',')[5] ) {
-    document.location.href = '/'
-}
+// if (!document.cookie || document.cookie.split('=')[1] != localStorage.getItem('info_to_insert').split(',')[5] ) {
+//     document.location.href = '/'
+// }
 
-
+checkCookie()
 addEventListener('DOMContentLoaded', () => {
     const name = document.querySelector(".name");
     const surname = document.querySelector(".surname");

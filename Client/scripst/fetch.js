@@ -8,7 +8,33 @@ const sendData = async (url, data) => {
 
 const getData = async (url) => {
     const response = await fetch(url);
-    return response.json();
+    return await response.json();
 }
 
-export {sendData, getData}
+const checkCookie = async () => {
+    // if (document.cookie.split('=')[1] == localStorage.getItem('info_to_insert')[0]) {
+    //     const data = {
+    //         "email": document.cookie.split('=')[1]
+    //     }
+    //     const resp = await sendData('http://127.0.0.1:5000/login', JSON.stringify(data));
+    //     console.log(resp)
+    //     localStorage.setItem('info_to_insert', resp)
+        //document.location.href = "/users_page.html"
+    if (document.cookie || localStorage.getItem('info_to_insert')) {
+        if (document.cookie.split('=')[1] == localStorage.getItem('info_to_insert').split(',')[5]) {
+            return true
+        }
+        else {
+            localStorage.clear()
+            document.cookie = ''
+            location.href = '/'
+        }
+    }
+    else {
+        if (location.href != 'http://127.0.0.1:5500/') {
+            location.href = '/'
+        }
+    }
+    
+}
+export {sendData, getData, checkCookie}
